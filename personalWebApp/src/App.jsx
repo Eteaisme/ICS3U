@@ -2,11 +2,10 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Elliot Tam</h1>
-      <h2>Personal Web App</h2>
-      <br />
-      <br />
-      <br />
+      <div className="title">
+        <h1>Elliot Tam</h1>
+        <h2>My Personal Web App</h2>
+      </div>
       <p>
         Hi!👋 My name is Elliot Tam and I am a student at Western Tech.
         <br />
