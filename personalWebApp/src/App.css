@@ -4,3 +4,7 @@
   padding: 2rem;
   text-align: center;
 }
+.tab {
+  display: inline-block;
+  margin-left: 4em;
+}
