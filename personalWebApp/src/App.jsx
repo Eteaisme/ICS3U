@@ -1,13 +1,21 @@
+import { useState } from "react";
+
 import { sculptureList } from "./data";
 import "./App.css";
 function App() {
-  let sculptureIndex = 0;
-
-  function handleClick() {
+  const [sculptureIndex, setSculptureIndex] = useState(0);
+  function nextClick() {
     if (sculptureIndex == sculptureList.length - 1) {
-      sculptureIndex = 0;
+      setSculptureIndex(0);
     } else {
-      sculptureIndex++;
+      setSculptureIndex(sculptureIndex + 1);
+    }
+  }
+  function backClick() {
+    if (sculptureIndex == 0) {
+      setSculptureIndex(sculptureList.length - 1);
+    } else {
+      setSculptureIndex(sculptureIndex - 1);
     }
   }
   let sculpture = sculptureList[sculptureIndex];
@@ -26,16 +34,22 @@ function App() {
       <br />
       <br />
       <br />
+      <h1>Sculptures</h1>
+      <br />
       <div id="sculptureList">
-        <button onClick={handleClick}>Next</button>
+        <span className="buttons">
+          <button onClick={backClick}>Back</button>
+          <button onClick={nextClick}>Next</button>
+        </span>
         <h2>
-          <i>{sculpture.name}</i>
+          <i>{sculpture.name} </i>
+          <br />
           by {sculpture.artist}
         </h2>
         <h3>
-          <img src={sculpture.url} alt={sculpture.alt} />
+          {sculptureIndex + 1} of {sculptureList.length}
         </h3>
-        <p>{sculpture.description}</p>
+        <img src={sculpture.url} alt={sculpture.alt} />{" "}
       </div>
       <br />
       <br />

@@ -8,8 +8,7 @@
   display: inline-block;
   margin-left: 4em;
 }
-#id {
-}
+
 h1 {
   margin-bottom: 0px;
 }
@@ -48,6 +47,8 @@ button {
   white-space: nowrap;
   will-change: box-shadow, transform;
   font-size: 18px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 button:focus {
