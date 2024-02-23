@@ -1,24 +1,24 @@
 import { useState } from "react";
 
-import { sculptureList } from "./data";
+import { albumsList } from "./data";
 import "./App.css";
 function App() {
-  const [sculptureIndex, setSculptureIndex] = useState(0);
+  const [albumsIndex, setSculptureIndex] = useState(0);
   function nextClick() {
-    if (sculptureIndex == sculptureList.length - 1) {
+    if (albumsIndex == albumsList.length - 1) {
       setSculptureIndex(0);
     } else {
-      setSculptureIndex(sculptureIndex + 1);
+      setSculptureIndex(albumsIndex + 1);
     }
   }
   function backClick() {
-    if (sculptureIndex == 0) {
-      setSculptureIndex(sculptureList.length - 1);
+    if (albumsIndex == 0) {
+      setSculptureIndex(albumsList.length - 1);
     } else {
-      setSculptureIndex(sculptureIndex - 1);
+      setSculptureIndex(albumsIndex - 1);
     }
   }
-  let sculpture = sculptureList[sculptureIndex];
+  let albums = albumsList[albumsIndex];
   return (
     <>
       <div className="title">
@@ -34,22 +34,22 @@ function App() {
       <br />
       <br />
       <br />
-      <h1>Sculptures</h1>
+      <h1>Albums</h1>
       <br />
-      <div id="sculptureList">
+      <div id="albumsList">
         <span className="buttons">
           <button onClick={backClick}>Back</button>
           <button onClick={nextClick}>Next</button>
         </span>
         <h2>
-          <i>{sculpture.name} </i>
+          <i>{albums.name} </i>
           <br />
-          by {sculpture.artist}
+          by {albums.artist}
         </h2>
         <h3>
-          {sculptureIndex + 1} of {sculptureList.length}
+          {albumsIndex + 1} of {albumsList.length}
         </h3>
-        <img src={sculpture.url} alt={sculpture.alt} />{" "}
+        <img src={albums.url} alt={albums.alt} />{" "}
       </div>
       <br />
       <br />
