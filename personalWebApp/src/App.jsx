@@ -1,5 +1,16 @@
+import { sculptureList } from "./data";
 import "./App.css";
 function App() {
+  let sculptureIndex = 0;
+
+  function handleClick() {
+    if (sculptureIndex == sculptureList.length - 1) {
+      sculptureIndex = 0;
+    } else {
+      sculptureIndex++;
+    }
+  }
+  let sculpture = sculptureList[sculptureIndex];
   return (
     <>
       <div className="title">
@@ -12,21 +23,31 @@ function App() {
         Some of my hobbies are programming, robotics and volleyball. This is a
         web application I built for my computer science class.
       </p>
-      <div>
-        <div>
-          <img src="https://placekitten.com/700/400" alt="Placeholder kitten" />
-        </div>
+      <br />
+      <br />
+      <br />
+      <div id="sculptureList">
+        <button onClick={handleClick}>Next</button>
+        <h2>
+          <i>{sculpture.name}</i>
+          by {sculpture.artist}
+        </h2>
+        <h3>
+          <img src={sculpture.url} alt={sculpture.alt} />
+        </h3>
+        <p>{sculpture.description}</p>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <footer>
         You can check out my Github or reach me at me email address.
       </footer>
-      <br />
-      <br />
-      <br />
       <footer>
         <a href="https://github.com/Eteaisme" target="_blank">
           <img
-            id="cat photo"
             src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
             alt="My Github"
             width={50}
