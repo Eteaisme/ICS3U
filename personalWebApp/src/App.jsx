@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { albumsList } from "./data";
 import "./App.css";
 function App() {
@@ -34,7 +33,7 @@ function App() {
       <br />
       <br />
       <br />
-      <h1>Albums</h1>
+      <h1>Albums I Enjoy</h1>
       <br />
       <div id="albumsList">
         <span className="buttons">
@@ -42,14 +41,14 @@ function App() {
           <button onClick={nextClick}>Next</button>
         </span>
         <h2>
-          <i>{albums.name} </i>
+          <i>{albums.name} </i> by {albums.artist}
           <br />
-          by {albums.artist}
+          Released: {albums.year}
         </h2>
+        <img src={albums.url} alt={albums.alt} />{" "}
         <h3>
           {albumsIndex + 1} of {albumsList.length}
         </h3>
-        <img src={albums.url} alt={albums.alt} />{" "}
       </div>
       <br />
       <br />
