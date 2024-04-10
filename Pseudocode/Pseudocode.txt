@@ -1,0 +1,10 @@
+ Seasonings = [Salt, Pepper];
+ 
+ eggInHole = Place(Egg, hole);
+ Season(Egg, [Seasonings]);
+ Grate(Cheese);
+ Sprinkle(Cheese, eggInHole);
+
+ While (Cheese != "Melted"):
+  Wait();
+
