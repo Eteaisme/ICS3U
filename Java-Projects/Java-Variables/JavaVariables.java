@@ -17,10 +17,19 @@ public class JavaVariables {
 
 
 
-      //With our current Allowance, how many battle passes will be a be able to buy?
-      System.out.println("With our current allowance we would be able to buy " + Math.floor(allowance/battlepass) + " battlepasses.");
+      /*With our current Allowance, how many battle passes will be a be able to buy?
+      
+          Divide our allowance by the cost of a battle pass and round down as we can only buy whole battlepasses 
+      
+      */
+      
+      System.out.println("With our current allowance we would be able to buy " + Math.floor(allowance/battlepass) + " battlepasses.");  
 
-      // What is the total cost of battle passes if we wanted to have each one? 
+      /* What is the total cost of battle passes if we wanted to have each one? 
+      
+            Multiply the cost of a battle pass by the number of games we own to get he total cost
+      
+      */
       System.out.println("If we wanted to buy every battle pass we would need $"+ (games *  battlepass));
    } 
 }
