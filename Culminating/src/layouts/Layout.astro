@@ -1,11 +1,20 @@
---- 
+---
+import Navbar from '../components/Navbar.astro';
 export type Props = {
     title?: string | null;
     description?: string | null;
+    backgroundImage: string | null;
+    favicon: string | null;
+    header : string | null;
+    subtitle : string | null; 
 }
 const {
   title,
-  description = "Located just north of High Park, the school was constructed in 1927. Lathe. You can find it all here: from 3d printers, to heavy-duty machine shop equipment."
+  description = "Welcome to the official website of Western Technical-Commercial School (WTCS), a premier educational institution located in the vibrant city of Toronto. Our school is dedicated to providing students with a comprehensive and diverse education that combines academic excellence with practical, career-oriented skills.",
+  backgroundImage = "/src/images/School-Background-Placeholder.png",
+  favicon = "/favicon.png",
+  header = "Lorem, ipsum dolor.",
+  subtitle = "Lorem ipsum dolor sit amet consectetur adipisicing elit ",
 } = Astro.props;
 ---
 <html lang="en">
@@ -15,10 +24,20 @@ const {
     <title>{title}</title>
     <meta name="description" content={description}>
     <meta name="keywords" content="Western Tech, wtcs, Wetern Technical Comercial School,">
-</head>
-<body>
+    <link rel="icon" href={favicon}/>
 
-<img src="src\images\School-Background-Placeholder.jpg" alt="">
-    <p></p>
+</head>
+<body >
+ <div class=" h-screen w-screen bg-cover  bg-[url('/src/images/School-Background-Placeholder.png')] ">
+  <Navbar></Navbar>
+  <div class="pt-40 pl-24">
+    <h1 class="text-6xl font-bold text-white ">{header}</h1>
+    <h2 class="text-3xl  text-white " set:html={subtitle} ></h2>
+    <br>
+    <a href="/" class="text-white text-2xl font-bold hover:underline">Register Today!</a>
+  </div>
+  </div> 
 </body>
 </html>
+
+

@@ -1,0 +1,46 @@
+
+
+---
+import Navbar from '../components/Navbar.astro';
+export type Props = {
+    title?: string | null;
+    description?: string | null;
+    backgroundImage: string | null;
+    favicon: string | null;
+    header : string | null;
+    subtitle : string | null; 
+}
+const {
+  title,
+  description = "At Western Technical-Commercial School (WTCS), we believe in the power of sports to enhance the educational experience and promote a healthy, active lifestyle. Our comprehensive sports program offers students the opportunity to develop physical fitness, teamwork, leadership skills, and school spirit.",
+  backgroundImage = "src/images/Programs-Background-Placeholder.png",
+  favicon = "/favicon.png ",
+  header = "Lorem, ipsum dolor.",
+  subtitle = "Lorem ipsum dolor sit amet consectetur adipisicing elit ",
+} = Astro.props;
+console.log(subtitle)
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{`Sports | ${title}`}</title>
+    <meta name="description" content={description}>
+    <meta name="keywords" content="Western Tech, wtcs, Wetern Technical Comercial School,">
+    <link rel="icon" href={favicon}/>
+
+</head>
+<body >
+ <div class="h-screen w-screen bg-cover  bg-[url('/src/images/Sports-Background-Placeholder.png')] ">
+  <Navbar></Navbar>
+  <div class="pt-40 pl-24">
+    <h1 class="text-6xl font-bold text-white ">{header}</h1>
+    <h2 class="text-3xl  text-white " set:html={subtitle} ></h2>
+    <br>
+    <a href="/" class="text-white text-2xl font-bold hover:underline">Register Today!</a>
+  </div>
+  </div> 
+</body>
+</html>
+
+
