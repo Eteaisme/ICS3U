@@ -1,0 +1,24 @@
+--- 
+export type Props = {
+    title?: string | null;
+    description?: string | null;
+}
+const {
+  title,
+  description = "Located just north of High Park, the school was constructed in 1927. Lathe. You can find it all here: from 3d printers, to heavy-duty machine shop equipment."
+} = Astro.props;
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <meta name="keywords" content="Western Tech, wtcs, Wetern Technical Comercial School,">
+</head>
+<body>
+
+<img src="src\images\School-Background-Placeholder.jpg" alt="">
+    <p></p>
+</body>
+</html>
